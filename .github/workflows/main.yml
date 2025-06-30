@@ -63,3 +63,13 @@ jobs:
           cat deploy/deployment.yml
           sed -i "s|image: geraldakenji/demo-app:.*|image: geraldakenji/demo-app:${{ env.VERSION }}|g" deploy/deployment.yml
           cat deploy/deployment.yml
+
+    #   # Update Github
+    #   - name: Commit the changes
+    #     run: |
+    #       git config --global user.email "<>"
+    #       git config --global user.name "GitHub Actions"
+    #       git add deploy/deployment.yml
+    #       git commit -m "Update deployment.yml with new image version - ${{ env.VERSION }}"
+    #       git remote set-url origin https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/infosecsingh/GitHub-Actions-ArgoCD.git
+    #       git push origin main
